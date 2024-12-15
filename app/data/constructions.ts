@@ -1,7 +1,9 @@
+export type ResourceValue = number | string;
+
 export interface Construction {
-  output?: Record<string, any>;
-  requirements?: Record<string, any>;
-  demand?: Record<string, any>;
+  output?: Record<string, ResourceValue>;
+  requirements?: Record<string, number>;
+  demand?: Record<string, number>;
   construction: {
     materials: number;
     workforce: number;
