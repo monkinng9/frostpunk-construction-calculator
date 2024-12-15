@@ -44,19 +44,55 @@ export default function ConstructionList({ items, onRemove }: Props) {
                 Remove
               </button>
             </div>
-            <div className="grid grid-cols-3 gap-4 text-sm">
-              <div className="bg-gray-50 p-2 rounded">
-                <div className="text-gray-500">Materials</div>
-                <div className="font-medium">{item.construction.construction.materials}</div>
+            <div className="space-y-4">
+              {/* Construction Requirements */}
+              <div>
+                <h5 className="font-semibold mb-2 text-gray-700">Construction</h5>
+                <div className="grid grid-cols-3 gap-4 text-sm">
+                  <div className="bg-gray-50 p-2 rounded">
+                    <div className="text-gray-500">Materials</div>
+                    <div className="font-medium">{item.construction.construction.materials}</div>
+                  </div>
+                  <div className="bg-gray-50 p-2 rounded">
+                    <div className="text-gray-500">Workforce</div>
+                    <div className="font-medium">{item.construction.construction.workforce}</div>
+                  </div>
+                  <div className="bg-gray-50 p-2 rounded">
+                    <div className="text-gray-500">Time</div>
+                    <div className="font-medium">{item.construction.construction.time}</div>
+                  </div>
+                </div>
               </div>
-              <div className="bg-gray-50 p-2 rounded">
-                <div className="text-gray-500">Workforce</div>
-                <div className="font-medium">{item.construction.construction.workforce}</div>
-              </div>
-              <div className="bg-gray-50 p-2 rounded">
-                <div className="text-gray-500">Time</div>
-                <div className="font-medium">{item.construction.construction.time}</div>
-              </div>
+
+              {/* Output Section */}
+              {item.construction.output && (
+                <div>
+                  <h5 className="font-semibold mb-2 text-gray-700">Output</h5>
+                  <div className="grid grid-cols-2 gap-4 text-sm">
+                    {Object.entries(item.construction.output).map(([key, value]) => (
+                      <div key={key} className="bg-green-50 p-2 rounded">
+                        <div className="text-gray-500 capitalize">{key}</div>
+                        <div className="font-medium">{value}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Demand Section */}
+              {item.construction.demand && (
+                <div>
+                  <h5 className="font-semibold mb-2 text-gray-700">Demand</h5>
+                  <div className="grid grid-cols-2 gap-4 text-sm">
+                    {Object.entries(item.construction.demand).map(([key, value]) => (
+                      <div key={key} className="bg-red-50 p-2 rounded">
+                        <div className="text-gray-500 capitalize">{key}</div>
+                        <div className="font-medium">{value}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         ))}
