@@ -20,6 +20,12 @@ export default function ConstructionSearch({ constructions, onSelect }: Props) {
         type="text"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' && filteredConstructions.length > 0) {
+            onSelect(filteredConstructions[0]);
+            setSearch('');
+          }
+        }}
         placeholder="Filter constructions..."
         className="w-full p-2 border rounded mb-2"
       />
