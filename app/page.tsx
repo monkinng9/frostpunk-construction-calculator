@@ -26,15 +26,15 @@ export default function Home() {
         <h1 className="text-3xl font-bold mb-8 text-gray-800 text-center">Construction Calculator</h1>
         <div className="flex gap-8">
           {/* Left side - Search */}
-          <div className="w-1/2 bg-white p-6 rounded-lg shadow-md">
+          <div className="w-1/3 bg-white p-6 rounded-lg shadow-md">
             <ConstructionSearch 
               constructions={constructionData} 
               onSelect={handleSelect}
             />
           </div>
           
-          {/* Right side - Selected Items */}
-          <div className="w-1/2 bg-white p-6 rounded-lg shadow-md">
+          {/* Middle - Selected Items */}
+          <div className="w-1/3 bg-white p-6 rounded-lg shadow-md">
             <div className="flex justify-end mb-4">
               <button
                 onClick={handleClear}
@@ -47,6 +47,80 @@ export default function Home() {
               items={selectedItems}
               onRemove={handleRemove}
             />
+          </div>
+
+          {/* Right side - Totals Summary */}
+          <div className="w-1/6 bg-white p-6 rounded-lg shadow-md">
+            <h3 className="font-bold text-lg text-gray-800 mb-4">Total Requirements</h3>
+            
+            {/* Construction Totals */}
+            <div className="mb-6">
+              <h4 className="font-semibold text-sm text-gray-700 mb-2">Construction</h4>
+              <div className="space-y-2">
+                <div className="bg-gray-50 p-2 rounded">
+                  <div className="text-gray-500 text-sm">Materials</div>
+                  <div className="font-medium">
+                    {selectedItems.reduce((sum, item) => sum + item.construction.construction.materials, 0)}
+                  </div>
+                </div>
+                <div className="bg-gray-50 p-2 rounded">
+                  <div className="text-gray-500 text-sm">Workforce</div>
+                  <div className="font-medium">
+                    {selectedItems.reduce((sum, item) => sum + item.construction.construction.workforce, 0)}
+                  </div>
+                </div>
+                <div className="bg-gray-50 p-2 rounded">
+                  <div className="text-gray-500 text-sm">Time</div>
+                  <div className="font-medium">
+                    {selectedItems.reduce((sum, item) => sum + item.construction.construction.time, 0)}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Output Totals */}
+            <div className="mb-6">
+              <h4 className="font-semibold text-sm text-gray-700 mb-2">Total Output</h4>
+              <div className="space-y-2">
+                {Object.entries(
+                  selectedItems.reduce((acc, item) => {
+                    if (item.construction.output) {
+                      Object.entries(item.construction.output).forEach(([key, value]) => {
+                        acc[key] = (acc[key] || 0) + (typeof value === 'number' ? value : 0);
+                      });
+                    }
+                    return acc;
+                  }, {} as Record<string, number>)
+                ).map(([key, value]) => (
+                  <div key={key} className="bg-green-50 p-2 rounded">
+                    <div className="text-gray-500 text-sm capitalize">{key}</div>
+                    <div className="font-medium">{value}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Demand Totals */}
+            <div>
+              <h4 className="font-semibold text-sm text-gray-700 mb-2">Total Demand</h4>
+              <div className="space-y-2">
+                {Object.entries(
+                  selectedItems.reduce((acc, item) => {
+                    if (item.construction.demand) {
+                      Object.entries(item.construction.demand).forEach(([key, value]) => {
+                        acc[key] = (acc[key] || 0) + (typeof value === 'number' ? value : 0);
+                      });
+                    }
+                    return acc;
+                  }, {} as Record<string, number>)
+                ).map(([key, value]) => (
+                  <div key={key} className="bg-red-50 p-2 rounded">
+                    <div className="text-gray-500 text-sm capitalize">{key}</div>
+                    <div className="font-medium">{value}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </main>
