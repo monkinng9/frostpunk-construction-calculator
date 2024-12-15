@@ -21,10 +21,10 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen p-8 font-[family-name:var(--font-geist-sans)]">
+    <div className="min-h-screen bg-gray-50 p-8 font-[family-name:var(--font-geist-sans)]">
       <main className="max-w-4xl mx-auto flex flex-col gap-8 items-center">
-        <h1 className="text-2xl font-bold mb-4">Construction Calculator</h1>
-        <div className="w-full space-y-6">
+        <h1 className="text-3xl font-bold mb-4 text-gray-800">Construction Calculator</h1>
+        <div className="w-full space-y-6 bg-white p-6 rounded-lg shadow-md">
           <ConstructionSearch 
             constructions={constructionData} 
             onSelect={handleSelect}
@@ -33,7 +33,7 @@ export default function Home() {
           <div className="flex justify-end">
             <button
               onClick={handleClear}
-              className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+              className="bg-red-500 text-white px-6 py-2 rounded-lg hover:bg-red-600 transition-colors shadow-sm hover:shadow-md"
             >
               Clear All
             </button>
