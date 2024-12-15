@@ -13,7 +13,7 @@ export interface Construction {
 }
 
 export const constructionData: Record<string, Construction> = {
-  "HousingDistrict": {
+  "Housing District": {
     "output": {
       "shelter": 20
     },
@@ -30,7 +30,7 @@ export const constructionData: Record<string, Construction> = {
     },
     "description": "Provides Shelter in houses and other dwellings."
   },
-  "FoodDistrict": {
+  "Food District": {
     "output": {
       "food": 50
     },
@@ -48,7 +48,7 @@ export const constructionData: Record<string, Construction> = {
     },
     "description": "Grows Food in Fertile Soil and prepares it for consumption."
   },
-  "ExtractionDistrict": {
+  "Extraction District": {
     "output": {
       "coal": 120,
       "prefabs": "+15/week"
@@ -69,7 +69,7 @@ export const constructionData: Record<string, Construction> = {
     },
     "description": "Extracts Resources from Deposits. The type of Resource extracted depends on the underlying Deposit."
   },
-  "IndustrialDistrict": {
+  "Industrial District": {
     "output": {
       "prefabs": "+10/week"
     },
@@ -106,7 +106,7 @@ export const constructionData: Record<string, Construction> = {
     },
     "description": "Sends Charting Expeditions to the Frostland and transports Resources between the City and its Colonies and Outposts."
   },
-  "ResearchInstitute": {
+  "Research Institute": {
     "output": {
       "researchSpeed": "increased"
     },
@@ -123,7 +123,7 @@ export const constructionData: Record<string, Construction> = {
     },
     "description": "Facility dedicated to coming up with technological and sociological solutions to large-scale problems. Unlocks the Idea Tree. Each institute improves Research Speed."
   },
-  "CouncilHall": {
+  "Council Hall": {
     "construction": {
       "materials": 200,
       "workforce": 80,
