@@ -15,7 +15,14 @@ export default function ConstructionList({ items, onRemove }: Props) {
   return (
     <div className="w-full max-w-2xl">
       <div className="bg-blue-50 p-6 rounded-lg mb-6 shadow-sm">
-        <h3 className="font-bold mb-4 text-lg text-gray-800">Totals</h3>
+        <h3 className="font-bold mb-4 text-lg text-gray-800">Selected Items</h3>
+        <div className="mb-4">
+          {items.map((item, index) => (
+            <span key={index} className="inline-block bg-white px-3 py-1 rounded-full text-sm mr-2 mb-2">
+              {item.name}
+            </span>
+          ))}
+        </div>
         <div className="grid grid-cols-3 gap-6">
           <div className="bg-white p-4 rounded-lg shadow-sm">
             <div className="text-sm text-gray-500">Materials</div>
