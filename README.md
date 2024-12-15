@@ -26,7 +26,7 @@ docker build -t construction-calculator .
 docker run -p 3002:3000 construction-calculator
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3002](http://localhost:3002) with your browser to see the result.
 
 ## Features
 
@@ -34,6 +34,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - Search and add multiple buildings
 - View resource demands and outputs
 - Clear all selections
+
+![alt text](image.png)
 
 ## Learn More
 
