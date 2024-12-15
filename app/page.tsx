@@ -64,15 +64,21 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="bg-gray-50 p-2 rounded">
-                  <div className="text-gray-500 text-sm">Workforce</div>
+                  <div className="text-gray-500 text-sm">Heatstamp</div>
                   <div className="font-medium">
-                    {selectedItems.reduce((sum, item) => sum + item.construction.construction.workforce, 0)}
+                    {selectedItems.reduce((sum, item) => sum + item.construction.construction.heatstamp, 0)}
                   </div>
                 </div>
                 <div className="bg-gray-50 p-2 rounded">
-                  <div className="text-gray-500 text-sm">Time</div>
+                  <div className="text-gray-500 text-sm">Prefabs</div>
                   <div className="font-medium">
-                    {selectedItems.reduce((sum, item) => sum + item.construction.construction.time, 0)}
+                    {selectedItems.reduce((sum, item) => sum + item.construction.construction.prefabs, 0)}
+                  </div>
+                </div>
+                <div className="bg-gray-50 p-2 rounded">
+                  <div className="text-gray-500 text-sm">Workforce</div>
+                  <div className="font-medium">
+                    {selectedItems.reduce((sum, item) => sum + (item.construction.requirements?.workforce || 0), 0)}
                   </div>
                 </div>
               </div>

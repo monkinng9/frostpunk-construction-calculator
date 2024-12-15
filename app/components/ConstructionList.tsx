@@ -9,8 +9,8 @@ interface Props {
 
 export default function ConstructionList({ items, onRemove }: Props) {
   const totalMaterials = items.reduce((sum, item) => sum + item.construction.construction.materials, 0);
-  const totalWorkforce = items.reduce((sum, item) => sum + item.construction.construction.workforce, 0);
-  const totalTime = items.reduce((sum, item) => sum + item.construction.construction.time, 0);
+  const totalHeatstamp= items.reduce((sum, item) => sum + item.construction.construction.heatstamp, 0);
+  const totalPrefabs = items.reduce((sum, item) => sum + item.construction.construction.prefabs, 0);
 
   return (
     <div className="w-full max-w-2xl">
@@ -22,12 +22,12 @@ export default function ConstructionList({ items, onRemove }: Props) {
             <div className="text-xl font-bold text-gray-800">{totalMaterials}</div>
           </div>
           <div className="bg-white p-4 rounded-lg shadow-sm">
-            <div className="text-sm text-gray-500">Workforce</div>
-            <div className="text-xl font-bold text-gray-800">{totalWorkforce}</div>
+            <div className="text-sm text-gray-500">heatstamp</div>
+            <div className="text-xl font-bold text-gray-800">{totalHeatstamp}</div>
           </div>
           <div className="bg-white p-4 rounded-lg shadow-sm">
-            <div className="text-sm text-gray-500">Time</div>
-            <div className="text-xl font-bold text-gray-800">{totalTime}</div>
+            <div className="text-sm text-gray-500">Prefabs</div>
+            <div className="text-xl font-bold text-gray-800">{totalPrefabs}</div>
           </div>
         </div>
       </div>
@@ -54,12 +54,12 @@ export default function ConstructionList({ items, onRemove }: Props) {
                     <div className="font-medium">{item.construction.construction.materials}</div>
                   </div>
                   <div className="bg-gray-50 p-2 rounded">
-                    <div className="text-gray-500">Workforce</div>
-                    <div className="font-medium">{item.construction.construction.workforce}</div>
+                    <div className="text-gray-500">heatstamp</div>
+                    <div className="font-medium">{item.construction.construction.heatstamp}</div>
                   </div>
                   <div className="bg-gray-50 p-2 rounded">
-                    <div className="text-gray-500">Time</div>
-                    <div className="font-medium">{item.construction.construction.time}</div>
+                    <div className="text-gray-500">Prefabs</div>
+                    <div className="font-medium">{item.construction.construction.prefabs}</div>
                   </div>
                 </div>
               </div>

@@ -23,7 +23,7 @@ Build and run with Docker:
 docker build -t construction-calculator .
 
 # Run the container
-docker run -p 3000:3000 construction-calculator
+docker run -p 3002:3000 construction-calculator
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.

@@ -6,8 +6,8 @@ export interface Construction {
   demand?: Record<string, number>;
   construction: {
     materials: number;
-    workforce: number;
-    time: number;
+    heatstamp: number;
+    prefabs: number;
   };
   description: string;
 }
@@ -25,8 +25,8 @@ export const constructionData: Record<string, Construction> = {
     },
     "construction": {
       "materials": 200,
-      "workforce": 40,
-      "time": 200
+      "heatstamp": 40,
+      "prefabs": 200
     },
     "description": "Provides Shelter in houses and other dwellings."
   },
@@ -38,20 +38,20 @@ export const constructionData: Record<string, Construction> = {
       "workforce": 600
     },
     "demand": {
-       "materials": 25,
+    "materials": 25,
       "heat": 40
     },
     "construction": {
       "materials": 600,
-      "workforce": 40,
-      "time": 200
+      "heatstamp": 40,
+      "prefabs": 200
     },
     "description": "Grows Food in Fertile Soil and prepares it for consumption."
   },
   "Extraction District": {
     "output": {
       "coal": 120,
-      "prefabs per week": 15
+      "heatstamp per week": 15
     },
     "requirements": {
       "workforce": 600,
@@ -64,14 +64,14 @@ export const constructionData: Record<string, Construction> = {
     },
     "construction": {
       "materials": 600,
-      "workforce": 40,
-      "time": 150
+      "heatstamp": 40,
+      "prefabs": 150
     },
     "description": "Extracts Resources from Deposits. The type of Resource extracted depends on the underlying Deposit."
   },
   "Industrial District": {
     "output": {
-      "prefabs per week": 10
+      "heatstamp per week": 10
     },
     "requirements": {
       "materials": 50,
@@ -83,10 +83,10 @@ export const constructionData: Record<string, Construction> = {
     },
     "construction": {
       "materials": 600,
-      "workforce": 40,
-      "time": 100
+      "heatstamp": 40,
+      "prefabs": 100
     },
-    "description": "Processes Materials into Prefabs or Goods. Can produce other Resource with additional infrastructure."
+    "description": "Processes Materials into heatstamp or Goods. Can produce other Resource with additional infrastructure."
   },
   "Logistics": {
     "output": {
@@ -101,8 +101,8 @@ export const constructionData: Record<string, Construction> = {
     },
     "construction": {
       "materials": 400,
-      "workforce": 40,
-      "time": 200
+      "heatstamp": 40,
+      "prefabs": 200
     },
     "description": "Sends Charting Expeditions to the Frostland and transports Resources between the City and its Colonies and Outposts."
   },
@@ -118,16 +118,16 @@ export const constructionData: Record<string, Construction> = {
     },
     "construction":{
       "materials": 400,
-      "workforce": 100,
-      "time": 50
+      "heatstamp": 100,
+      "prefabs": 50
     },
     "description": "Facility dedicated to coming up with technological and sociological solutions to large-scale problems. Unlocks the Idea Tree. Each institute improves Research Speed."
   },
   "Council Hall": {
     "construction": {
       "materials": 200,
-      "workforce": 80,
-      "time": 40
+      "heatstamp": 80,
+      "prefabs": 40
     },
     "description": "Seat of the Council, where delegates representing the City's inhabitants meet to discuss and enact laws."
   }
