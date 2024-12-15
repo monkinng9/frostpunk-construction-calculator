@@ -34,7 +34,7 @@ export default function Home() {
           </div>
           
           {/* Middle - Selected Items */}
-          <div className="w-1/3 bg-white p-6 rounded-lg shadow-md h-[800px] overflow-y-auto">
+          <div className="w-2/3 bg-white p-6 rounded-lg shadow-md h-[800px] overflow-y-auto">
             <div className="flex justify-end mb-4">
               <button
                 onClick={handleClear}
@@ -50,7 +50,7 @@ export default function Home() {
           </div>
 
           {/* Right side - Totals Summary */}
-          <div className="w-1/6 bg-white p-6 rounded-lg shadow-md h-[800px] overflow-y-auto">
+          <div className="w-1/4 bg-white p-6 rounded-lg shadow-md h-[800px] overflow-y-auto">
             <h3 className="font-bold text-lg text-gray-800 mb-4">Total Requirements</h3>
             
             {/* Construction Totals */}
