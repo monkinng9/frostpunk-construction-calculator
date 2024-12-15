@@ -51,7 +51,7 @@ export const constructionData: Record<string, Construction> = {
   "Extraction District": {
     "output": {
       "coal": 120,
-      "prefabs": "+15/week"
+      "prefabs per week": 15
     },
     "requirements": {
       "workforce": 600,
@@ -71,7 +71,7 @@ export const constructionData: Record<string, Construction> = {
   },
   "Industrial District": {
     "output": {
-      "prefabs": "+10/week"
+      "prefabs per week": 10
     },
     "requirements": {
       "materials": 50,
