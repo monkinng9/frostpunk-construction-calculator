@@ -29,7 +29,7 @@ export default function ConstructionSearch({ constructions, onSelect }: Props) {
         placeholder="Filter constructions..."
         className="w-full p-3 border rounded-lg mb-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
       />
-      <div className="bg-white border rounded-lg max-h-60 overflow-auto shadow-sm">
+      <div className="bg-white border rounded-lg max-h-[600px] overflow-auto shadow-sm">
         {filteredConstructions.map((name) => (
           <div
             key={name}
