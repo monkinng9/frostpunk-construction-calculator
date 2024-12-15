@@ -41,6 +41,17 @@ export default function ConstructionSearch({ constructions, onSelect }: Props) {
           >
             <div className="font-medium">{name}</div>
             <div className="text-sm text-gray-600">{constructions[name].description}</div>
+            <div className="mt-2 flex gap-4 text-xs text-gray-500">
+              <div>
+                <span className="font-medium">Materials:</span> {constructions[name].construction.materials}
+              </div>
+              <div>
+                <span className="font-medium">Heatstamp:</span> {constructions[name].construction.heatstamp}
+              </div>
+              <div>
+                <span className="font-medium">Prefabs:</span> {constructions[name].construction.prefabs}
+              </div>
+            </div>
           </div>
         ))}
       </div>
